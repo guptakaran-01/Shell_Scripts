@@ -6,11 +6,11 @@
 statuss=$(git status | awk '/Untracked/{print $1}')
 change=$(git status | awk '/Changes/{print $1}')
 
-if [[ $statuss -eq "Untracked" ]] || [[ $change -eq "Changes" ]]
+if [[ $statuss == "Untracked" ]] || [[ $change == "Changes" ]]
 then 
 	echo "Untracked files"
-	$(git add .)
-        $(git commit -m "Adding new file ")
+	git add .
+	git commit -m "Automated commit $(date) "
 else
 	exit 1
 
