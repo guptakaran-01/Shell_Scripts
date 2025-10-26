@@ -3,16 +3,14 @@
 
 # Making a shell script to commit on github
 
-status =$(git status | awk '/Untracked/{print $1}')
-add= $(git add .)
-commit=$(git commit -m "Adding new file ")
+statuss=$(git status | awk '/Untracked/{print $1}')
 change=$(git status | awk '/Changes/{print $1}')
 
-if [[ $status -eq "Untracked" ]] || [[ $change -eq "Changes" ]]
+if [[ $statuss -eq "Untracked" ]] || [[ $change -eq "Changes" ]]
 then 
 	echo "Untracked files"
-	$add
-        $commit
+	$(git add .)
+        $(git commit -m "Adding new file ")
 else
 	exit 1
 
