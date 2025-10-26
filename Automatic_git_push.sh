@@ -10,7 +10,7 @@ change=$(git status | awk '/Changes/{print $1}')
 
 if [[ $status -eq "Untracked" ]] || [[ $change -eq "Changes" ]]
 then 
-	echo "Unteracked files"
+	echo "Untracked files"
 	$add
         $commit
 else
