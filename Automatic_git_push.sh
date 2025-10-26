@@ -12,6 +12,7 @@ then
 	git add .
 	git commit -m "Automated commit $(date) "
 else
+	echo "Nothing to commit"
 	exit 1
 
 fi
