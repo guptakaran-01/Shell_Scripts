@@ -8,9 +8,10 @@ change=$(git status | awk '/Changes/{print $1}')
 
 if [[ $statuss == "Untracked" ]] || [[ $change == "Changes" ]]
 then 
-	echo "Untracked files"
+	echo "Automated push to github"
 	git add .
 	git commit -m "Automated commit $(date) "
+	git push origin main
 else
 	echo "Nothing to commit"
 	exit 1
