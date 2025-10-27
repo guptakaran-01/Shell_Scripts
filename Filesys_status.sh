@@ -4,7 +4,7 @@
 # Monitoring disk space 
 
 fu=$(df -H | awk '/drivers/{print $5}' | tr -d %)
-to="anshuk1145@gmail.com"
+to="example@gmail.com"
 
 if [[ $fu -gt 20 ]]
 then
